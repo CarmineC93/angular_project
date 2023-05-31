@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+  constructor(){}
 
+  ngOnInit(): void {
+
+  }
+
+  onSubmit(form:NgForm){
+    const email = form.value.email;
+    const password = form.value.password;
+  }
 }
