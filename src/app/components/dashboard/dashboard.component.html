@@ -1,13 +1,28 @@
 <mat-drawer-container class="container">
   <mat-drawer mode="side" opened>
     <mat-list role="list">
-      <mat-list-item role="listitem" routerLink="home">About</mat-list-item>
-      <mat-list-item role="listitem" routerLink="about">About</mat-list-item>
-      <mat-list-item role="listitem" routerLink="contact">Contact</mat-list-item>
+      <mat-list-item role="listitem" routerLink="home" [routerLinkActive]="'active'">About</mat-list-item>
+      <mat-list-item role="listitem" routerLink="about" [routerLinkActive]="'active'">About</mat-list-item>
+      <mat-list-item role="listitem" routerLink="contact" [routerLinkActive]="'active'">Contact</mat-list-item>
     </mat-list>
   </mat-drawer>
   <mat-drawer-content>
+    <mat-toolbar>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My App</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+
     <router-outlet>
+
       <!-- main content -->
     </router-outlet>
   </mat-drawer-content>
