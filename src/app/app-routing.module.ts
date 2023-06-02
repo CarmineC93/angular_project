@@ -6,9 +6,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  {path: '', component: DashboardComponent, children:[
+  {path: '', component: DashboardComponent, canActivate:[AuthGuard], children:[
     {path:"", redirectTo: "home", pathMatch:"full"},
     {path:"home", component:HomeComponent},
     {path:"about", component:AboutComponent},
